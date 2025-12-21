@@ -1,2 +1,1 @@
-export const API_BASE_URL =
-  "https://port-0-taeback-server-mjarpn5xbe9deccb.sel3.cloudtype.app";
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
