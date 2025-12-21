@@ -1,7 +1,8 @@
 // src/api/client.js
 import axios from "axios";
 
-const BASE = import.meta.env.VITE_API_BASE_URL; // 예: https://api.taeback.net
+const BASE = import.meta.env.VITE_API_BASE_URL || "https://api.taeback.net";
+
 
 const http = axios.create({
   baseURL: BASE,
