@@ -1,7 +1,6 @@
-// src/api/client.js
 import axios from "axios";
 
-const BASE = import.meta.env.VITE_API_BASE_URL; // https://api.taeback.net
+const BASE = import.meta.env.VITE_API_BASE_URL;
 
 const http = axios.create({
   baseURL: BASE,
@@ -14,15 +13,25 @@ export const api = {
     return data;
   },
 
-  // ✅ 본사 주문 목록
-  headOrders: async (headOfficeId, status) => {
+  loginStoreByCode: async (merchantCode) => {
+    const { data } = await http.post("/auth/login-store-by-code", { merchantCode });
+    return data;
+  },
+
+  getProducts: async (headOfficeId) => {
+    const { data } = await http.get("/products", { params: { headOfficeId } });
+    return data;
+  },
+
+  // ✅ 추가: 본사 주문 목록
+  headOrders: async ({ headOfficeId, status }) => {
     const { data } = await http.get("/head/orders", {
       params: { headOfficeId, status },
     });
     return data;
   },
 
-  // ✅ 본사 주문 상세
+  // ✅ 추가: 본사 주문 상세
   headOrderDetail: async (orderId) => {
     const { data } = await http.get(`/head/orders/${orderId}`);
     return data;
