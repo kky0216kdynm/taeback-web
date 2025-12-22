@@ -6,8 +6,9 @@ export function toDate(d) {
   export function formatKoreanDateTime(d) {
     const dt = toDate(d);
     if (!dt) return "-";
-    return dt.toLocaleString("ko-KR");
+    return dt.toLocaleString("ko-KR", { timeZone: "Asia/Seoul" });
   }
+  
   
   export function ymd(dt) {
     const y = dt.getFullYear();
