@@ -16,7 +16,7 @@ export default function OrderListItem({ order, onToggle, expanded, children }) {
       <div className="orderRow" onClick={onToggle}>
         <div className="orderLeft">
           <div className="orderStore">{order.store_name}</div>
-          <div className="orderMeta">{formatKoreanDateTime(order.created_at)}</div>
+          <div className="orderMeta">{o.created_at}</div>
         </div>
 
         <div className="orderRight">
