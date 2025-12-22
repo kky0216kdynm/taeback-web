@@ -49,7 +49,7 @@ export default function Dashboard({ headOfficeId }) {
               <div key={o.id} className="orderRowPlain">
                 <div>
                   <div className="orderStore">{o.store_name}</div>
-                  <div className="orderMeta">{new Date(o.created_at).toLocaleString("ko-KR")}</div>
+                  <div className="orderMeta">{new Date(o.created_at).toLocaleString("ko-KR", { timeZone: "Asia/Seoul" })}</div>
                 </div>
                 <div className="orderAmount">{(o.total_amount || 0).toLocaleString()}원</div>
               </div>
