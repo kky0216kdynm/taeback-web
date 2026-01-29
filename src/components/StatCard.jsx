@@ -2,10 +2,10 @@ import React from "react";
 
 export default function StatCard({ title, big, sub }) {
   return (
-    <div className="card statCard">
-      <div className="statTitle">{title}</div>
-      <div className="statBig">{big}</div>
-      <div className="statSub">{sub}</div>
+    <div className="card">
+      <div className="cardTitle">{title}</div>
+      <div className="cardValue">{big}</div>
+      <div className="cardSmall">{sub}</div>
     </div>
   );
 }
