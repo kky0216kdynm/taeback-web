@@ -32,7 +32,7 @@ export default function App() {
     <Layout
       headOfficeName={session.headOffice?.name ?? "본사"}
       route={route}
-      onRouteChange={setRoute}
+      onRoute={setRoute}
       onLogout={onLogout}
     >
       {route === "dashboard" && <Dashboard headOfficeId={headOfficeId} />}
